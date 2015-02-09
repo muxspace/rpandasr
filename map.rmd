@@ -1,0 +1,18 @@
+Apply along axis
+0 implies column operations, 1 implies row operations
+[]: y.shape
+(2, 810)
+[]: vars = apply_along_axis(fn, 0, xs)
+[]: vars.shape
+(810,)
+[]: vars = apply_along_axis(fn, 1, xs)
+[]: vars.shape
+(2,)
+
+
+# Operate on each column as a vector
+apply(xs, 2, fn)
+
+
+# Operate on each row as a vector
+apply(xs, 1, fn)

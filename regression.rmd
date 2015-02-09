@@ -1,0 +1,18 @@
+Python
+======
+Use SciKit Learn
+
+from sklearn.linear_model import LinearRegression
+lm = LinearRegression()
+
+y = np.random.normal(size=50)
+x = np.reshape(np.random.normal(size=(50,3)))
+lm.fit(x,y)
+lm.coef_
+lm.intercept_
+
+
+y <- rnorm(50)
+x <- matrix(rnorm(150), ncol=3)
+o <- lm(y ~ x)
+summary(o)

@@ -1,0 +1,16 @@
+Python
+Random numbers in Python can be generated using NumPy's numpy.random
+package
+
+Uniform Distribution
+runif()
+
+numpy.random.normal(loc=0.0, scale=1.0, size=None)
+
+
+10 N(0,1) random numbers
+np.random.normal(size=10)
+
+runif(10)
+
+

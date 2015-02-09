@@ -1,0 +1,4 @@
+Get dimensions of a matrix
+x.shape
+
+dim(x)

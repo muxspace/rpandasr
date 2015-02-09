@@ -1,0 +1,41 @@
+Concatenate vectors
+
+Scalar with vector
+np.append(np.array(x), y)
+
+c(x, y)
+
+Repeat a value
+In [36]: np.repeat(1,4)
+Out[36]: array([1, 1, 1, 1])
+
+
+In [34]: np.repeat([1,2,3], 3)
+Out[34]: array([1, 1, 1, 2, 2, 2, 3, 3, 3])
+
+
+
+> rep(1,4)
+[1] 1 1 1 1
+
+> rep(1:3, 3)
+[1] 1 2 3 1 2 3 1 2 3
+
+
+Last element of a vector
+x[-1]
+
+Last n elements of a vector
+
+x = range(0,10)
+In [3]: x[-3:]
+Out[3]: [7, 8, 9]
+
+> tail(x,3)
+
+
+All but the last n elements of a vector
+In [4]: x[:-3]
+Out[4]: [0, 1, 2, 3, 4, 5, 6]
+
+
