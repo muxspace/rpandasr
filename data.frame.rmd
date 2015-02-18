@@ -1,29 +1,61 @@
+Create a `data.frame`. Pandas uses a dict to initialize a DataFrame, 
+where each key-value pair represents a column.
+```python
 from pandas import DataFrame
-
 df = DataFrame({'a': [1,2,3], 'b':[4,5,6], 'c':[7,8,9]})
-
+```
+R syntax is similar except each column is a distinct argument to
+the `data.frame` constructor.
+```R
 df <- data.frame(a=c(1,2,3), b=c(4,5,6), c=c(7,8,9))
+```
 
-Get one column
+## Column Access
+In pandas, DataFrame indices access columns. A column name can be used 
+to extract the given column.
+```python
 In [12]: df['b']
 Out[12]: 
 0    4
 1    5
 2    6
 Name: b, dtype: int64
-
-
+```
+The syntax in R is basically the same, except data.frames specify rows, 
+columns, or both. In this case we only need to specify a single column
+name.
+```R
 > df[,'b']
+```
 
-
-Get some columns
+If you want multiple columns, a list must be passed to the indexing
+operator. This looks a little weird in Python, but it makes sense
+if you consider the operand to be a list.
+```python
 In [13]: df[['a','b']]
 Out[13]: 
    a  b
 0  1  4
 1  2  5
 2  3  6
-
-
+```
+The same principle applies in R, except that a character vector is used.
+```R
 > df[,c('a','b')]
+```
 
+## Row access
+
+## Cell access
+
+# Date-based selection
+
+```python
+df[datetime(2014,5,13):]
+```
+Pandas parses string representations of dates to specify date ranges. [3]
+In R, `xts` does something similar.
+
+
+# References
+[1] http://pandas.pydata.org/pandas-docs/dev/timeseries.html#datetimeindex-partial-string-indexing
