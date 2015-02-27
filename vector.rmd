@@ -1,9 +1,15 @@
 Concatenate vectors
+===================
 
 Scalar with vector
+------------------
+```python
 np.append(np.array(x), y)
+```
 
+```R
 c(x, y)
+```
 
 Repeat a value
 In [36]: np.repeat(1,4)
@@ -38,4 +44,17 @@ All but the last n elements of a vector
 In [4]: x[:-3]
 Out[4]: [0, 1, 2, 3, 4, 5, 6]
 
+
+Date sequences
+==============
+
+```python
+x = np.array(now) + np.array([dt.timedelta(minutes=n) for n in range(10)])
+
+x = np.array([now + dt.timedelta(minutes=n) for n in range(10)])
+```
+
+```R
+x = Sys.Date + (0:9)
+```
 

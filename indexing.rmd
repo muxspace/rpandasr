@@ -1,0 +1,24 @@
+Indexing by date
+----------------
+
+Data Frame
+----------
+```python
+now = dt.datetime.utcnow()
+idx = np.array([now + dt.timedelta(minutes=n) for n in range(10)])
+df = pd.DataFrame({'a':range(4), 'b':range(2,6)}, index=idx)
+```
+
+Date index
+----------
+```python
+df[df.index < dt.datetime(2015,02,27,11)]
+```
+
+```python
+x[x < datetime.datetime(2015,12,11)]
+```
+
+```R
+x[x < as.Date('2015-12-11')]
+```

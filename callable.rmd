@@ -1,0 +1,84 @@
+Closures
+========
+Python supports closures, but late binding of variables make them tricky
+to work with.
+
+
+
+Read-only variables
+-------------------
+```python
+def outer():
+  multiplier = 2
+  def fn(a):
+    return a * multiplier
+  return fn
+```
+
+```python
+In [20]: f = outer()
+
+In [21]: f(4)
+Out[21]: 8
+```
+
+
+
+```python
+def outer(multiplier):
+  def fn(a):
+    return a * multiplier
+  return fn
+```
+
+```python
+In [24]: f = outer(2)
+
+In [25]: f(4)
+Out[25]: 8
+```
+
+Write variables
+---------------
+The `global` keyword won't work for variables in closures due to late binding.
+
+```python
+def outer():
+  sum = 0
+  def fn(a):
+    sum = sum + a
+    return sum
+  return fn
+```
+
+```python
+In [17]: f = outer()
+
+In [18]: f(4)
+---------------------------------------------------------------------------
+UnboundLocalError                         Traceback (most recent call last)
+<ipython-input-18-a122d87dbe99> in <module>()
+----> 1 f(4)
+
+<ipython-input-16-6a7128eb2a52> in fn(a)
+      2       sum = 0
+      3       def fn(a):
+----> 4             sum = sum + a
+      5             return sum
+      6       return fn
+
+UnboundLocalError: local variable 'sum' referenced before assignment
+```
+
+```python
+def outer():
+  sum = 0
+  def fn(a):
+    global sum
+    sum = sum + a
+    return sum
+  return fn
+```
+
+Generators
+==========
