@@ -22,3 +22,44 @@ x[x < datetime.datetime(2015,12,11)]
 ```R
 x[x < as.Date('2015-12-11')]
 ```
+
+### Select a subset of columns
+#### By name
+```python
+df[column]
+```
+
+```R
+df[,column]
+```
+
+```python
+df[[column_1, column_2]]
+```
+
+```R
+df[,c(column_1, column_2)]
+```
+
+#### By set negation
+```python
+df.drop(column, axis=1)
+```
+
+```R
+df[,! column %in% colnames(df)]
+```
+
+### Select a subset of rows
+#### By ordinal
+In pandas use the iloc indexer. Note that this uses index slice notation 
+and not function application.
+
+```python
+df.iloc[0]
+```
+
+```R
+df[0,]
+```
+

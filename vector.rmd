@@ -58,3 +58,12 @@ x = np.array([now + dt.timedelta(minutes=n) for n in range(10)])
 x = Sys.Date + (0:9)
 ```
 
+
+Series
+======
+DataFrames comprise multiple Series. Creating a Series from a scalar has
+idiosyncratic syntax since the index must be a list.
+```python
+pd.Series(5, index=[datetime(2014,12,1)], name='fl')
+```
+
